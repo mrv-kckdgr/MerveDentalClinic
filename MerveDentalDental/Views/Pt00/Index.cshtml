@@ -1,0 +1,57 @@
+ @using MerveDentalDental.Models
+ @model IEnumerable<MerveDentalDental.Pt00>
+
+
+    @{
+    ViewData["Title"] = "Patient";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>Hasta Tc:</th>
+            <th>Hasta Adı</th>
+            <th>Hasta Soyadı</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.Pid)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem=>item.Pname)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem=>item.Psurname)
+                </td>
+
+
+            </tr>
+            
+        }
+
+
+
+
+
+    </table>
+    
+</body>
+</html>
